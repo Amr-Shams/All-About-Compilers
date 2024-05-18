@@ -1,0 +1,56 @@
+Variable: y
+Kind: variable
+Type: integer
+====================
+Variable: x
+Kind: variable
+Type: integer
+====================
+Variable: meeeee
+Kind: variable
+Type: integer
+====================
+Variable: i
+Kind: variable
+Type: integer
+====================
+Variable: newstr
+Kind: variable
+Type: string
+====================
+Variable: newstr1
+Kind: variable
+Type: string
+====================
+Variable: hanet
+Kind: variable
+Type: integer
+====================
+Variable: meeeee
+Kind: variable
+Type: integer
+====================
+Variable: i
+Kind: variable
+Type: integer
+====================
+Variable: w
+Kind: variable
+Type: integer
+====================
+Variable: qw
+Kind: variable
+Type: integer
+====================
+Variable: w
+Kind: variable
+Type: integer
+====================
+Variable: w
+Kind: variable
+Type: integer
+====================
+Variable: qzw
+Kind: variable
+Type: integer
+====================

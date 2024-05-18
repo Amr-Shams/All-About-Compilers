@@ -1,0 +1,73 @@
+.textarea-cont{
+  width: 97.35%;
+  height: 400px;
+}
+textarea {
+  background-attachment: scroll;
+  background-repeat: repeat-y;
+  border-color: #ccc;
+  width: 99.55%;
+  height: 400px;
+  resize: none;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  background-color: #e8f1f2;
+  font-size: 20px;
+  color: black;
+  border: 1px solid #e8f1f2;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.line-numbers-column {
+  background-color: #dae4e6;
+  text-align: center;
+  width: 30px;
+  font-size: 18px;
+  line-height: 23.2px;
+  resize: none;
+  height: 400px;
+  overflow-y: hidden;
+  white-space: pre-wrap;
+  padding-top: 5px;
+}
+
+.highlighted-area{
+  position: absolute;
+  height: 400px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+  border: 0.8px solid transparent;
+  overflow-y: hidden;
+  white-space: pre-wrap;
+  overflow: hidden;
+  pointer-events: none;
+}
+.highlighted-line {
+  background-color: #ffbdbd;
+  width: max-content;
+  opacity: 0.5;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.nothighlighted-lines {
+  background-color: transparent;
+  width: 0px;
+  font-family: monospace;
+  width: max-content;
+  font-size: 20px;
+  padding: 2px 2px 0px 2px;
+  display: flex;
+  flex-direction: column;
+}
