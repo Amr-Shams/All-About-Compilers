@@ -82,3 +82,10 @@ warning: unused variable hanet
 warning: unused variable newstr1
 warning: unused variable newstr
 warning: unused variable meeeee
+warning: unused variable qzw
+warning: unused variable qw
+warning: unused variable w
+warning: unused variable hanet
+warning: unused variable newstr1
+warning: unused variable newstr
+warning: unused variable meeeee

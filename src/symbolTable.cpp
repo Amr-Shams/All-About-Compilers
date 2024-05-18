@@ -1,4 +1,4 @@
-#include "symbolTable.h"
+#include "../include/symbolTable.h"
 #include <functional>  
 
 #include<string.h>

@@ -70,13 +70,13 @@
 #line 1 "parser.y"
 
     /*Definition section */
-    #include "common.h"
+    #include "include/common.h"
     #include <stdio.h>
     #include <stdlib.h>
     #include<string.h>
     #include <stdarg.h>
-    #include "parser.h"
-    #include "symbolTable.h"
+    #include "include/parser.h"
+    #include "include/symbolTable.h"
     extern FILE *yyin;
     extern int yylex(void);
     void yyerror(const char *str);
