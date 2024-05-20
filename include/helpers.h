@@ -2,6 +2,8 @@
 #ifndef HELPERS_H
 #define HELPERS_H
 #include "parser.h"
+#include "../parser.tab.h"  
+
     #include "common.h"
     #include <stdio.h>
     #include <stdlib.h>
@@ -13,17 +15,17 @@
     void yyerror(const char *str);
     void read_file(char *filename);
     void yywarning(const char* str);
-    FILE* errorsFile;
-    FILE* warningsFile;
-    FILE* OutputQuadraplesFile;
-    int Labels;
-    int CaseLabels;
-    int EndSwitchLabel;
-    int EnumValue;
-    int TempVariables;
-    SymbolTable* st = SymbolTable::getInstance();
-    Node *currentScope = new Node();
-    Node *rootScope = currentScope;
+    extern FILE* errorsFile;
+    extern FILE* warningsFile;
+    extern FILE* OutputQuadraplesFile;
+    extern int Labels;
+    extern int CaseLabels;
+    extern int EndSwitchLabel;
+    extern int EnumValue;
+    extern int TempVariables;
+    extern SymbolTable* st;
+    extern Node *currentScope;
+    extern Node *rootScope;
 nodeType *createOperationNode(int oper, int nops, ...);
 nodeType *createIdentifierNode(char *name);
 nodeType *constantValue(DataTypeEnum type, void* value);
@@ -36,5 +38,7 @@ nodeType *addToParameterList(nodeType * parameterList, nodeType* node, nodeType 
 nodeType *createParameterCallList(nodeType * node);
 nodeType *addToParameterCallList(nodeType * parameterList, nodeType* node);
 void freeNode(nodeType *p);
+
+int mainFunction(int argc, char *argv[]);
 
 #endif // HELPERS_H

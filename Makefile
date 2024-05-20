@@ -14,13 +14,13 @@ run_flex:
 run_and_build:
 	bison -d -o parser.tab.c parser.y
 	flex -o lex.yy.c scanner.l
-	g++ -Iutils -o parser parser.tab.c lex.yy.c src/common.c src/symbolTable.cpp  -std=c++11
+	g++ -Iutils -o parser parser.tab.c lex.yy.c src/common.c src/symbolTable.cpp src/helpers.c  -std=c++11
 	./parser < input.txt
 
 debug: 
 	bison -d -o parser.tab.c parser.y
 	flex -o lex.yy.c scanner.l
-	g++ -Iutils -o parser parser.tab.c lex.yy.c src/common.c src/symbolTable.cpp  -I include -std=c++11
+	g++ -Iutils -o parser parser.tab.c lex.yy.c src/common.c src/symbolTable.cpp src/helpers.c -I include -std=c++11
 	lldb ./parser
 
 clean:

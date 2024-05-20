@@ -1,5 +1,15 @@
 #include "../include/helpers.h"
-
+FILE* errorsFile = NULL;
+FILE* warningsFile = NULL;
+FILE* OutputQuadraplesFile = NULL;
+int Labels = 0;
+int CaseLabels = 0;
+int EndSwitchLabel = 0;
+int EnumValue = 0;
+int TempVariables = 0;
+SymbolTable* st = SymbolTable::getInstance();
+Node *currentScope = new Node();
+Node *rootScope = currentScope;
 void yyerror(const char *str)
 {
     fprintf(stderr,"error: %s, Last token: %s \n",str, last_token);
@@ -912,7 +922,34 @@ void read_file(char *filename) {
         exit(1);
     }
 
-    // Read input from file and process it as needed
+    fclose(fp);
+}
+int mainFunction(int argc, char **argv) {
+    FILE *fp = stdin;
+    if (argc > 1) {
+        fp = fopen(argv[1], "r");
+        if (!fp) {
+            perror("Error opening file");
+            return 1;
+        }
+    }
+
+    errorsFile = fopen("errors.txt", "w");
+
+    yyin = fp;
+    //Quadraples data initialization:
+    OutputQuadraplesFile = fopen("output.txt", "w");
+    Labels = 0;
+    CaseLabels = 0;
+    EndSwitchLabel = 0;
+    EnumValue = -1;
+    TempVariables = 0;
+    yyparse();
 
     fclose(fp);
+    fclose(errorsFile);
+    fclose(OutputQuadraplesFile);
+    st->generateSymbolTable(currentScope);
+
+    return 0;
 }

@@ -1,3 +1,6 @@
+#ifndef SYMBOL_TABLE_H
+#define SYMBOL_TABLE_H
+
 #include<iostream>
 #include <vector>
 #include <string>
@@ -15,8 +18,6 @@ struct Node
 
 class SymbolTable {
 private:
-  
-
     // Private constructor so that no objects can be created.
     SymbolTable() {}
 
@@ -30,29 +31,15 @@ public:
     // Static method to control the access to the singleton instance.
     static SymbolTable* getInstance();
 
-
     bool insertNode(Node*node,string identifier, string kind, int type );
-
-
     bool insertEnumVar(Node* node,string identifier, string kind, string type);
-    
-
     string checkType(Node* node, string name);
-
-
     string getKind(Node* node, string name);
-    
-
     bool validateEnum (Node *curr_node,std::pair<std::string,std::string>vars);
-    
-    
     void generateSymbolTable(Node*curr_node);
-
-
-
     Node *createNewScope(Node* currentScope);
     Node* switchBack(Node* currentScope);
     bool checkForUnusedVariables();
 };
 
-
+#endif // SYMBOL_TABLE_H
